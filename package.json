@@ -1,0 +1,30 @@
+{
+  "name": "dog-scraping",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Taylor Buckner <tbuckner@theappraisallane.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "request-promise-native": "^1.0.7"
+  },
+  "devDependencies": {
+    "@types/cheerio": "^0.22.13",
+    "@types/request-promise": "^4.1.44",
+    "concurrently": "^4.1.2",
+    "nodemon": "^1.19.3",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.3"
+  },
+  "scripts": {
+    "start": "npm run serve",
+    "build": "npm run build-ts && npm run lint",
+    "serve": "node dist/index.js",
+    "watch-node": "nodemon dist/index.js",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\"",
+    "build-ts": "tsc",
+    "watch-ts": "tsc -w"
+  }
+}
