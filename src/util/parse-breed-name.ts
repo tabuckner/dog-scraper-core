@@ -3,7 +3,7 @@ export function parseBreedNameKey(url: string): string {
     return url;
   }
   const parts = url.split('/dog-breeds');
-  if (parts[1]){
+  if (parts[1]) {
     return parts[1].replace(/\//g, '');
   }
 }

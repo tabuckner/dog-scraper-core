@@ -16,8 +16,13 @@ class AttributeScraper extends abstract_scraper_scraper_1.Scraper {
             const $rowEl = this.$(el);
             const attributeTerm = $rowEl.find(this.attributeTermSelector).text();
             const description = $rowEl.find(this.attributeDescriptionSelector).text();
-            const attribute = '' + attributeTerm.substring(0, attributeTerm.length - 1);
+            const descriptionHasList = description.indexOf(', ') > -1;
+            const attribute = attributeTerm.substring(0, attributeTerm.length - 1);
             const nextAttribute = { attribute, description };
+            if (descriptionHasList) {
+                const descriptionList = description.split(', ');
+                nextAttribute['descriptionList'] = descriptionList;
+            }
             breedAttributes.push(nextAttribute);
         });
         return breedAttributes;

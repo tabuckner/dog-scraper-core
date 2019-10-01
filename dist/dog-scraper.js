@@ -26,9 +26,9 @@ class DogScraper {
     setBreedInfo() {
         return __awaiter(this, void 0, void 0, function* () {
             this.breedInfo = {};
-            for (let i = 0; i < 2; i++) {
-                const breedLink = this.breedLinks[i];
-                // for (const breedLink of this.breedLinks) {
+            // for (let i = 0; i < 2; i++) {
+            //   const breedLink = this.breedLinks[i];
+            for (const breedLink of this.breedLinks) {
                 const breedNameKey = parse_breed_name_1.parseBreedNameKey(breedLink);
                 const displayName = parse_breed_name_1.parseDisplayNameFromBreedNameKey(breedNameKey);
                 const nextPage = yield url_loader_1.UrlLoader.load(breedLink);
