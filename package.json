@@ -1,30 +1,58 @@
 {
-  "name": "dog-scraping",
-  "version": "1.0.0",
-  "main": "index.js",
-  "author": "Taylor Buckner <tbuckner@theappraisallane.com>",
-  "license": "MIT",
+  "name": "dog-scraper-core",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "module": "dist/testing.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tslint -p tsconfig.json -c tslint.json --fix \"src/**/*\"",
+    "lint:tsdx": "tsdx lint",
+    "/* LEGACY */ clean": "yarn rimraf ./dist",
+    "/* LEGACY */ start": "yarn serve",
+    "/* LEGACY */ build": "yarn lint:ts && yarn build:ts",
+    "/* LEGACY */ serve": "node dist/index.js",
+    "/* LEGACY */ watch-node": "nodemon dist/index.js",
+    "/* LEGACY */ watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"yarn watch-ts\" \"yarn watch-node\"",
+    "/* LEGACY */ build:ts": "yarn clean && tsc",
+    "/* LEGACY */ watch:ts": "tsc -w",
+    "/* LEGACY */ lint:ts": "tslint -p tsconfig.json -c tslint.json --fix \"src/**/*\""
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "devDependencies": {
+    "@types/cheerio": "^0.22.13",
+    "@types/jest": "^24.0.19",
+    "@types/request-promise": "^4.1.44",
+    "concurrently": "^5.0.0",
+    "husky": "^3.0.9",
+    "nodemon": "^1.19.4",
+    "rimraf": "^3.0.0",
+    "ts-node": "^8.4.1",
+    "tsdx": "0.9.3",
+    "tslib": "^1.10.0",
+    "tslint": "^5.20.0",
+    "typescript": "3.5"
+  },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
     "request-promise-native": "^1.0.7"
-  },
-  "devDependencies": {
-    "@types/cheerio": "^0.22.13",
-    "@types/request-promise": "^4.1.44",
-    "concurrently": "^4.1.2",
-    "nodemon": "^1.19.3",
-    "ts-node": "^8.4.1",
-    "typescript": "^3.6.3"
-  },
-  "scripts": {
-    "start": "npm run serve",
-    "build": "npm run build-ts && npm run lint",
-    "serve": "node dist/index.js",
-    "watch-node": "nodemon dist/index.js",
-    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\"",
-    "build-ts": "tsc",
-    "watch-ts": "tsc -w"
   }
 }

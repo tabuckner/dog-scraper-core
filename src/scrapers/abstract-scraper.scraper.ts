@@ -14,5 +14,4 @@ export class Scraper {
     return load(htmlString, options);
   }
 
-  
 }

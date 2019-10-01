@@ -1,7 +1,8 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const dog_scraper_1 = require("./dog-scraper");
-new dog_scraper_1.DogScraper().getBreedInfo().then((info) => {
-    console.warn(JSON.stringify(info, null, 2));
-});
-//# sourceMappingURL=index.js.map
+
+'use strict'
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports = require('./dog-scraper-core.cjs.production.min.js')
+} else {
+  module.exports = require('./dog-scraper-core.cjs.development.js')
+}
