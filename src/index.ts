@@ -1,3 +1,5 @@
-import { UrlLoader } from "./url-loader";
+import { DogScraper } from "./dog-scraper";
 
-const test = new UrlLoader('');
+new DogScraper().getBreedInfo().then((info) => {
+  console.warn(JSON.stringify(info, null, 2));
+});

@@ -1,0 +1,1 @@
+{"version":3,"file":"url-loader.js","sourceRoot":"","sources":["../../src/url-loader/url-loader.ts"],"names":[],"mappings":";;AAAA,qDAAsD;AAEtD,MAAa,SAAS;IAEpB,MAAM,CAAC,IAAI,CAAC,GAAW;QACrB,IAAI,CAAC,GAAG,EAAE;YACR,MAAM,IAAI,KAAK,CAAC,yBAAyB,CAAC,CAAC;SAC5C;QACD,OAAO,qBAAG,CAAC,GAAG,CAAC,CAAC;IAClB,CAAC;CAEF;AATD,8BASC"}
