@@ -1,4 +1,4 @@
-import { Scraper } from "./abstract-scraper.scraper";
+import { Scraper } from './abstract-scraper.scraper';
 
 export class BreedLinksScraper extends Scraper {
   private dropDownSelector = 'select#breed-search';
@@ -20,4 +20,4 @@ export class BreedLinksScraper extends Scraper {
     });
     return links;
   }
-} 
+}
