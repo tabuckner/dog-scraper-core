@@ -6,6 +6,7 @@ export function parseBreedNameKey(url: string): string {
   if (parts[1]) {
     return parts[1].replace(/\//g, '');
   }
+  return '';
 }
 
 export function parseDisplayNameFromBreedNameKey(breedNameKey: string) {

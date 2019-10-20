@@ -12,7 +12,7 @@ export class BreedLinksScraper extends Scraper {
   public getBreedLinks(): string[] {
     const links: string[] = [];
     this.targetDropDown = this.$(this.dropDownSelector).get(0);
-    this.$(this.targetDropDown).find(this.optionSelector).each((index, el) => {
+    this.$(this.targetDropDown).find(this.optionSelector).each((_, el) => {
       const link = this.$(el).attr('value');
       if (link && link.length > 0) {
         links.push(link);

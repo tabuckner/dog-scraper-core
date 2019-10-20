@@ -1,7 +1,7 @@
 import { BreedAttribute } from './breed-attribute.model';
 
 export interface BreedInfo {
-  [key: string]: {
+  [breedName: string]: {
     displayName: string,
     attributes: BreedAttribute[],
   };

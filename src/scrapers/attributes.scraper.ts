@@ -14,7 +14,7 @@ export class AttributeScraper extends Scraper {
   public getBreedsAttributes(): BreedAttribute[] {
     const breedAttributes: BreedAttribute[] = [];
     const attributeRows = this.$(this.attributeListSelector).find(this.attributeListRowSelector);
-    attributeRows.each((index, el) => {
+    attributeRows.each((_, el) => {
       const $rowEl = this.$(el);
       const attributeTerm = $rowEl.find(this.attributeTermSelector).text();
       const description = $rowEl.find(this.attributeDescriptionSelector).text();

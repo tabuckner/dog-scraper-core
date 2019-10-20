@@ -11,7 +11,10 @@ export class DogScraper {
   private breedsPageHtmlString: string;
   private breedLinks: string[];
 
-  public async getBreedInfo() {
+  /**
+   * Single Public Method to Scrape Dog Breed Data from AKC website.
+   */
+  public async getBreedInfo(): Promise<BreedInfo> {
     await this.getBreedsPage();
     this.getBreedLinks();
     await this.setBreedInfo();
@@ -20,8 +23,6 @@ export class DogScraper {
 
   private async setBreedInfo() {
     this.breedInfo = {};
-    // for (let i = 0; i < 2; i++) {
-    //   const breedLink = this.breedLinks[i];
     for (const breedLink of this.breedLinks) {
       const breedNameKey = parseBreedNameKey(breedLink);
       const displayName = parseDisplayNameFromBreedNameKey(breedNameKey);
