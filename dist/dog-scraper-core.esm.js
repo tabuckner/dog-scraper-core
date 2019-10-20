@@ -339,8 +339,7 @@ function () {
     try {
       var _this4 = this;
 
-      _this4.breedInfo = {}; // for (let i = 0; i < 2; i++) {
-      //   const breedLink = this.breedLinks[i];
+      _this4.breedInfo = {};
 
       var _temp2 = _forOf(_this4.breedLinks, function (breedLink) {
         var breedNameKey = parseBreedNameKey(breedLink);

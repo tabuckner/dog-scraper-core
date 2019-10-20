@@ -1,5 +1,5 @@
 {
-  "name": "dog-scraper-core",
+  "name": "@tabuckner/dog-scraper-core",
   "version": "0.1.0",
   "main": "dist/index.js",
   "module": "dist/testing.esm.js",
