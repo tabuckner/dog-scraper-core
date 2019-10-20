@@ -1,4 +1,6 @@
-# TSDX Bootstrap
+# Dog-Scraper-Core
+
+A small TS->JS library with Type Definitions for scraping dog breed information from the AKC website.
 
 This project was bootstrapped with [TSDX](https://github.com/jaredpalmer/tsdx).
 
